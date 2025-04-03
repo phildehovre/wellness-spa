@@ -16,7 +16,6 @@ export const Contact = () => {
     phone: '',
     message: '',
   });
-  const contactRef = useRef(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
