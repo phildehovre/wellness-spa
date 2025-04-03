@@ -16,7 +16,6 @@ export const Home = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const services = [
     {
