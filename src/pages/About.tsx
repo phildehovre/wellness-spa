@@ -1,4 +1,4 @@
-import { Box, Container, Typography, useTheme, useMediaQuery, Card, CardContent, Button } from '@mui/material';
+import { Box, Typography, useTheme, Card, CardContent, Button } from '@mui/material';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 import { useRef } from 'react';
@@ -8,7 +8,6 @@ const MotionDiv = motion.div;
 
 export const About = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const storyRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: storyRef,

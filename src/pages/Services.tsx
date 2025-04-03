@@ -1,4 +1,4 @@
-import { Box, Typography, Button, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, Button, useTheme } from '@mui/material';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 import { useRef } from 'react';
@@ -8,7 +8,6 @@ const MotionDiv = motion.div;
 
 export const Services = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,

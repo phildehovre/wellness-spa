@@ -1,18 +1,15 @@
-import { Box, Container, Typography, Button, Grid, Card, CardContent, CardActions, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, Button, Card, CardContent, CardActions, useTheme } from '@mui/material';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
 import { useRef } from 'react';
 
 const MotionBox = motion(Box);
 const MotionDiv = motion.div;
-const MotionImg = motion.img;
 
 export const Home = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const servicesRef = useRef(null);
   const heroRef = useRef(null);
-  const testimonialsRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],

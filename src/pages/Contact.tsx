@@ -1,12 +1,13 @@
-import { Box, Container, Typography, TextField, Button, useTheme, useMediaQuery } from '@mui/material';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { Box, Container, Typography, TextField, Button, useTheme, useMediaQuery, Paper } from '@mui/material';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState, useRef } from 'react';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 const MotionBox = motion(Box);
+const MotionDiv = motion.div;
 
 export const Contact = () => {
   const theme = useTheme();
@@ -17,6 +18,13 @@ export const Contact = () => {
     phone: '',
     message: '',
   });
+  const contactRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: contactRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
