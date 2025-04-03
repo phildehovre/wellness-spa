@@ -1,6 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-import '@fontsource/cormorant-garamond';
-import '@fontsource/roboto';
 
 export const theme = createTheme({
   palette: {
