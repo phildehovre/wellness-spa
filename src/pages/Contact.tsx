@@ -1,5 +1,5 @@
 import { Box, Typography, TextField, Button, useTheme } from '@mui/material';
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState, useRef } from 'react';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -17,10 +17,6 @@ export const Contact = () => {
     message: '',
   });
   const contactRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: contactRef,
-    offset: ['start end', 'end start'],
-  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
